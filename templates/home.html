@@ -10,7 +10,7 @@
             background: #f8f9fa;
         }
         .hero {
-            background: url('https://via.placeholder.com/1500x500') no-repeat center center;
+            background: url('{{ url_for("static", filename="images/bank.jpg") }}') no-repeat center center;
             background-size: cover;
             height: 500px;
             color: white;
@@ -66,7 +66,7 @@
         </div>
     </section>
     <footer class="text-center py-4">
-        <p>&copy; 2023 Bank System. All rights reserved.</p>
+        <p>&copy; 2024 Bank System. All rights reserved.</p>
     </footer>
 </body>
 </html>

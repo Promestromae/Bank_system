@@ -2,8 +2,9 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px; /* Add some padding around the body */
     background-color: #f4f4f4;
+    font-size: 16px; /* Base font size */
 }
 
 /* Header Styles */
@@ -12,6 +13,7 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
 header h1 {
@@ -34,6 +36,7 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+    color: #2ecc71; /* Change color on hover */
 }
 
 /* Main Content Styles */
@@ -41,13 +44,61 @@ main {
     padding: 20px;
 }
 
+/* Hero Section Styles */
+.hero {
+    background: url('statics/images/bank.jpg') no-repeat center center;
+    background-size: cover;
+    height: 500px; /* Adjust the height as needed */
+    color: white; /* Text color for the hero section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Button Styles */
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 150px; /* Ensure buttons have a minimum width */
+}
+
+.btn-primary {
+    background-color: #3498db; /* Primary button color */
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #2ecc71; /* Secondary button color */
+    color: white;
+}
+
 /* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
+    padding: 20px 0; /* Increased padding for the footer */
+    position: relative; /* Change to relative for better layout control */
     bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .hero {
+        height: 300px; /* Adjust height for mobile */
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Full width buttons on mobile */
+    }
+}
+
+@media (min-width: 601px) {
+    .btn-primary, .btn-secondary {
+        width: auto; /* Reset width on larger screens */
+    }
 }

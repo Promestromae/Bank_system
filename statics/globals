@@ -31,3 +31,47 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+
+/* Hero section background image */
+.hero {
+    background: url('statics/images/bank.jpg') no-repeat center center;
+    background-size: cover;
+    height: 500px; /* Adjust the height as needed */
+    color: white; /* Adjust text color if necessary */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* Needed for overlay */
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay color */
+    z-index: 1; /* Overlay above the background */
+}
+
+.hero h2, .hero p {
+    position: relative;
+    z-index: 2; /* Text above overlay */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px; /* Adjust height for smaller screens */
+        font-size: 1.5rem; /* Adjust text size if needed */
+    }
+}
+
+/* Container class */
+.container {
+    max-width: 1200px; /* Set a max width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Add horizontal padding */
+}
