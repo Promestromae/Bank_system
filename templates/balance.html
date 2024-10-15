@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Balance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa; /* Light background */
+        }
+        header {
+            background-color: #3498db; /* Header background color */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        section {
+            margin-top: 20px; /* Space above sections */
+            padding: 15px; /* Padding inside sections */
+            background: white; /* White background for sections */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .balance-info {
+            font-size: 1.5em; /* Larger font for balance */
+            color: #2c3e50; /* Dark text color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Check Your Balance</h1>
+    </header>
+    <main>
+        <section id="balance-info">
+            <h2>Your Current Balance</h2>
+            <p class="balance-info"><strong>Balance:</strong> $1,234.56</p>
+        </section>
+        <section id="account-actions">
+            <h2>Manage Account</h2>
+            <button onclick="window.location.href='/deposit'">Deposit Money</button>
+            <button onclick="window.location.href='/withdraw'">Withdraw Money</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bank System</p>
+    </footer>
+</body>
+</html>
