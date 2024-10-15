@@ -1,45 +1,37 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, ForeignKey, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, sessionmaker
+from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-Base = declarative_base()
+# Initialize the SQLAlchemy object
+db = SQLAlchemy()
 
-class User(Base):
+class User(db.Model):
     __tablename__ = 'users'
     
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
-    email = Column(String, unique=True, nullable=False)
-    password = Column(String, nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, unique=True, nullable=False)
+    password = db.Column(db.String, nullable=False)
     
-    accounts = relationship('BankAccount', back_populates='user')
+    accounts = db.relationship('BankAccount', back_populates='user')
 
-class BankAccount(Base):
+class BankAccount(db.Model):
     __tablename__ = 'bank_accounts'
     
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
-    account_number = Column(String, unique=True, nullable=False)
-    balance = Column(Float, default=0.0)
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    account_number = db.Column(db.String, unique=True, nullable=False)
+    balance = db.Column(db.Float, default=0.0)
     
-    user = relationship('User', back_populates='accounts')
-    transactions = relationship('Transaction', back_populates='account')
+    user = db.relationship('User', back_populates='accounts')
+    transactions = db.relationship('Transaction', back_populates='account')
 
-class Transaction(Base):
+class Transaction(db.Model):
     __tablename__ = 'transactions'
     
-    id = Column(Integer, primary_key=True)
-    account_id = Column(Integer, ForeignKey('bank_accounts.id'), nullable=False)
-    amount = Column(Float, nullable=False)
-    timestamp = Column(DateTime, default=datetime.utcnow)
-    transaction_type = Column(String, nullable=False)  # e.g., 'deposit', 'withdrawal'
+    id = db.Column(db.Integer, primary_key=True)
+    account_id = db.Column(db.Integer, db.ForeignKey('bank_accounts.id'), nullable=False)
+    amount = db.Column(db.Float, nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    transaction_type = db.Column(db.String, nullable=False)  # e.g., 'deposit', 'withdrawal'
     
-    account = relationship('BankAccount', back_populates='transactions')
-
-# Create an engine and a session
-engine = create_engine('sqlite:///bank_system.db')
-Base.metadata.create_all(engine)
-
-Session = sessionmaker(bind=engine)
-session = Session()
+    account = db.relationship('BankAccount', back_populates='transactions')
