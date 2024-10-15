@@ -34,7 +34,7 @@ body {
 
 /* Hero section background image */
 .hero {
-    background: url('statics/images/bank.jpg') no-repeat center center;
+    background: url('{{ url_for("static", filename="images/bank.jpg") }}') no-repeat center center;
     background-size: cover;
     height: 500px; /* Adjust the height as needed */
     color: white; /* Adjust text color if necessary */
@@ -75,3 +75,4 @@ body {
     margin: 0 auto; /* Center the container */
     padding: 0 15px; /* Add horizontal padding */
 }
+

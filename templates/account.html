@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Account Details</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa; /* Light background */
+        }
+        header {
+            background-color: #3498db; /* Header background color */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        section {
+            margin-top: 20px; /* Space above sections */
+            padding: 15px; /* Padding inside sections */
+            background: white; /* White background for sections */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        button {
+            background-color: #2ecc71; /* Button background color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-right: 10px; /* Space between buttons */
+            cursor: pointer; /* Cursor changes to pointer */
+            border-radius: 5px; /* Rounded corners */
+        }
+        button:hover {
+            background-color: #27ae60; /* Darker green on hover */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,7 +52,7 @@
         <section id="account-actions">
             <h2>Manage Account</h2>
             <button onclick="editAccount()">Edit Account</button>
-            <button onclick="deleteAccount()">Delete Account</button>
+            <button onclick="confirmDelete()">Delete Account</button>
         </section>
     </main>
     <footer>
@@ -29,6 +61,12 @@
     <script>
         function editAccount() {
             alert('Edit account functionality to be implemented.');
+        }
+
+        function confirmDelete() {
+            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                deleteAccount();
+            }
         }
 
         function deleteAccount() {

@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa; /* Light background for the body */
+        }
+        header {
+            background-color: #3498db; /* Header background color */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+        nav ul li {
+            display: inline; /* Display links in a line */
+            margin: 0 15px; /* Space between links */
+        }
+        nav ul li a {
+            color: white; /* White text for links */
+            text-decoration: none; /* Remove underline */
+        }
+        nav ul li a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        main {
+            margin-top: 20px; /* Space above main content */
+        }
+        section {
+            background: white; /* White background for sections */
+            border-radius: 5px; /* Rounded corners */
+            padding: 15px; /* Padding inside sections */
+            margin-bottom: 20px; /* Space between sections */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        footer {
+            text-align: center; /* Center text in footer */
+            margin-top: 20px; /* Space above footer */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,8 +64,8 @@
     <main>
         <section id="account-summary">
             <h2>Account Summary</h2>
-            <p>Balance: $10,000</p>
-            <p>Last Transaction: $200 on 2023-10-01</p>
+            <p>Balance: <strong>$10,000</strong></p>
+            <p>Last Transaction: <strong>$200 on 2023-10-01</strong></p>
         </section>
         <section id="recent-transactions">
             <h2>Recent Transactions</h2>
@@ -35,7 +77,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Bank System. All rights reserved.</p>
+        <p>&copy; 2024 Bank System. All rights reserved.</p>
     </footer>
 </body>
 </html>

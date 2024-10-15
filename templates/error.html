@@ -7,20 +7,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8d7da;
-            color: #721c24;
+            background-color: #f8d7da; /* Light red background for errors */
+            color: #721c24; /* Dark red text */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            margin: 0; /* Remove default margin */
         }
         .error-container {
             text-align: center;
-            border: 1px solid #f5c6cb;
+            border: 1px solid #f5c6cb; /* Light red border */
             padding: 20px;
-            background-color: #f8d7da;
-            border-radius: 5px;
+            background-color: #f8d7da; /* Same light red background */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
         .error-container h1 {
             font-size: 2em;
@@ -29,12 +30,25 @@
         .error-container p {
             font-size: 1.2em;
         }
+        .error-container a {
+            display: inline-block; /* Block display for the link */
+            margin-top: 15px; /* Space above the link */
+            padding: 10px 20px; /* Padding for the link */
+            background-color: #3498db; /* Primary color for button */
+            color: white; /* White text */
+            text-decoration: none; /* No underline */
+            border-radius: 5px; /* Rounded corners for the button */
+        }
+        .error-container a:hover {
+            background-color: #2980b9; /* Darker shade on hover */
+        }
     </style>
 </head>
 <body>
     <div class="error-container">
         <h1>Error</h1>
         <p>An error has occurred. Please try again later.</p>
+        <a href="/">Go to Homepage</a> <!-- Link back to the homepage -->
     </div>
 </body>
 </html>

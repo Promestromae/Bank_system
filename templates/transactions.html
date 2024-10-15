@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #f9f9f9; /* Light background for better contrast */
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px; /* Spacing above the table */
         }
         th, td {
             padding: 10px;
@@ -21,29 +24,38 @@
         th {
             background-color: #f4f4f4;
         }
+        .no-transactions {
+            color: #888; /* Grey color for no transactions message */
+            text-align: center;
+            margin-top: 20px; /* Spacing for better visibility */
+        }
     </style>
 </head>
 <body>
     <h1>Transaction History</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Balance</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Example row -->
-            <tr>
-                <td>2023-10-01</td>
-                <td>Deposit</td>
-                <td>$500.00</td>
-                <td>$1500.00</td>
-            </tr>
-            <!-- More rows can be added here dynamically -->
-        </tbody>
-    </table>
+    {% if transactions %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.description }}</td>
+                    <td>${{ transaction.amount }}</td>
+                    <td>${{ transaction.balance }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="no-transactions">No transactions to display.</div>
+    {% endif %}
 </body>
 </html>

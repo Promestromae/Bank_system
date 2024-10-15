@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excity Bank</title>
-    <link rel="stylesheet" href="globals.css">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Use url_for to point to static files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/globals.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <header>

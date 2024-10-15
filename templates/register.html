@@ -4,12 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Light background for better contrast */
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto; /* Center the registration form */
+            padding: 20px;
+            background-color: white; /* White background for the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        h2 {
+            text-align: center; /* Center the header */
+        }
+        .form-group {
+            margin-bottom: 15px; /* Spacing between form groups */
+        }
+        label {
+            display: block; /* Ensure labels take full width */
+            margin-bottom: 5px; /* Spacing below the label */
+        }
+        input {
+            width: 100%; /* Full-width inputs */
+            padding: 10px; /* Padding inside inputs */
+            border: 1px solid #ccc; /* Light border for inputs */
+            border-radius: 4px; /* Rounded corners for inputs */
+        }
+        button {
+            width: 100%; /* Full-width button */
+            padding: 10px;
+            background-color: #3498db; /* Primary color */
+            color: white; /* White text on button */
+            border: none; /* Remove border */
+            border-radius: 4px; /* Rounded corners for button */
+            cursor: pointer; /* Pointer on hover */
+        }
+        button:hover {
+            background-color: #2980b9; /* Darker shade on hover */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h2>Register</h2>
-        <form action="/register" method="post">
+        <form action="/register" method="post" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -29,5 +72,18 @@
             <button type="submit">Register</button>
         </form>
     </div>
+
+    <script>
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
 </body>
-</html></html>
+</html>

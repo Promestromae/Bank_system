@@ -5,15 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deposit Money</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa; /* Light background color */
+        }
+        h1 {
+            color: #333; /* Darker color for header */
+            text-align: center; /* Center the header */
+        }
+        form {
+            max-width: 400px; /* Set max width for form */
+            margin: auto; /* Center the form */
+            padding: 20px; /* Add padding */
+            background: #fff; /* White background for the form */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        label {
+            display: block; /* Block display for labels */
+            margin-bottom: 5px; /* Space below labels */
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%; /* Full width input fields */
+            padding: 10px; /* Padding inside input fields */
+            margin-bottom: 15px; /* Space below input fields */
+            border: 1px solid #ccc; /* Light border for inputs */
+            border-radius: 5px; /* Rounded corners */
+        }
+        button {
+            width: 100%; /* Full width button */
+            padding: 10px; /* Padding inside button */
+            background-color: #3498db; /* Primary button color */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Larger font size */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        button:hover {
+            background-color: #2980b9; /* Darker shade on hover */
+        }
+    </style>
 </head>
 <body>
     <h1>Deposit Money</h1>
     <form action="/deposit" method="post">
         <label for="accountNumber">Account Number:</label>
-        <input type="text" id="accountNumber" name="accountNumber" required><br><br>
+        <input type="text" id="accountNumber" name="accountNumber" required>
         
         <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" required><br><br>
+        <input type="number" id="amount" name="amount" required>
         
         <button type="submit">Deposit</button>
     </form>
