@@ -5,7 +5,7 @@ def create_app():
 
     @app.route('/')
     def home():
-        return render_template('index.html')  # Render the index.html template
+        return render_template('dashboard.html')  # Render the index.html template
 
     return app
 
